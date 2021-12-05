@@ -1,8 +1,10 @@
 import React from "react";
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 const Register = () => {
+  const navigate = useNavigate();
   const BASE_URL = process.env.REACT_APP_BASE_URL;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -16,6 +18,7 @@ const Register = () => {
         role: "61a48ba866acf4f8462bf345",
       });
       console.log(result.data);
+      navigate("/login")
     } catch (err) {
       console.log(err);
     }

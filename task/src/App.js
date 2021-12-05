@@ -1,18 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
-import Login from './component/Login';
-import Register from './component/Register';
-import Task from './component/Task';
-import {BrowserRouter as Routes, Link, Route } from "react-router-dom";
-
+import "./App.css";
+import { Routes, Route, Link } from "react-router-dom";
+import Login from "./component/Login";
+import Register from "./component/Register";
+import Task from "./component/Task";
 
 function App() {
   return (
-    <>
-  <Login/>
-  <Register/>
-  <Task/>    
-      </>
+    <div>
+      <Routes>
+        <Route exact path="/" element={<Register />} />
+        <Route exact path="/Login" element={<Login />} />
+        <Route exact path="/tasks" element={<Task/>}/>
+        
+      </Routes>
+      
+    </div>
   );
 }
 
